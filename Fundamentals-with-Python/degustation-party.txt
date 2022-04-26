@@ -1,0 +1,29 @@
+command = input()
+collection = dict()
+unliked_meals = 0
+
+while command != "Stop":
+    opinion, guest, meal = command.split("-")
+    if opinion == "Like":
+        if guest not in collection:
+            collection[guest] = {"meal": list()}
+            collection[guest]["meal"].append(meal)
+        else:
+            if meal not in collection[guest]["meal"]:
+                collection[guest]["meal"].append(meal)
+    if opinion == "Dislike":
+        if guest in collection:
+            if meal in collection[guest]["meal"]:
+                unliked_meals += 1
+                collection[guest]["meal"].remove(meal)
+                print(f"{guest} doesn't like the {meal}.")
+            else:
+                print(f"{guest} doesn't have the {meal} in his/her collection.")
+        else:
+            print(f"{guest} is not at the party.")
+    command = input()
+
+for guest in collection.keys():
+    print(f"{guest}: {', '.join(collection[guest]['meal'])}")
+
+print(f"Unliked meals: {unliked_meals}")
