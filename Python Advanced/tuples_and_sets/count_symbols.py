@@ -9,3 +9,4 @@ for i in text:
 
 for alpha, occurrence in sorted(alphabets.items()):
     print(f"{alpha}: {occurrence} time/s")
+

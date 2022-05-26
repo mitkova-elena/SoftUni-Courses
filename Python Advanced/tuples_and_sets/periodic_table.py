@@ -7,3 +7,4 @@ for _ in range(n):
 
 for element in chemical_elements:
     print(element)
+

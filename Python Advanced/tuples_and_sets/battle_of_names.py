@@ -25,3 +25,4 @@ elif even_sum >= odd_sum:
     result = odd_set.symmetric_difference(even_set)
 
 print(*result, sep=', ')
+

@@ -14,3 +14,4 @@ intersection_set = n_set.intersection(m_set)
 
 for num in intersection_set:
     print(num)
+

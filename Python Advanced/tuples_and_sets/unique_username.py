@@ -6,3 +6,4 @@ for _ in range(n):
     all_usernames.add(username)
 
 print("\n".join(all_usernames))
+
