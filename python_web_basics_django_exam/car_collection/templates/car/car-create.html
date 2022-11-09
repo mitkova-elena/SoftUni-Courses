@@ -1,0 +1,26 @@
+{% extends 'core/base.html'%}
+{% block content%}
+    <header>
+        <!-- Navigation Bar -->
+        <h1><a class="index-navigation" href="{% url 'index' %}"><span>C</span>ARS <span>C</span>OLLECTION</a></h1>
+        <nav>
+            <a href="{% url 'catalogue' %}">Catalogue</a>
+            <a href="{% url 'car create' %}">Create Car</a>
+            <a href="{% url 'profile details' %}">Profile</a>
+        </nav>
+    </header>
+
+
+    <section id="create-page" class="auth">
+        <!-- create car form -->
+        <form method="post" action="{% url 'car create' %}" id="create">
+            <div class="container">
+                <h1 class="form-create-headline">Create Car</h1>
+                    {{ form }}
+                {% csrf_token %}
+
+                <input class="btn" type="submit" value="Create Car">
+            </div>
+        </form>
+    </section>
+{% endblock %}
